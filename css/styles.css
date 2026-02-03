@@ -1,24 +1,25 @@
 :root {
-    --bg-primary: #edf0ff;
+    --bg-primary: #f1f8ff;
     --bg-secondary: #ffffff;
-    --text-primary: #1f2937;
-    --text-secondary: #6b7280;
-    --accent-1: #6477cb;
-            --accent-2: #764ba2;
-            --card-shadow: rgba(0,0,0,0.1);
-            --border-color: #e5e7eb;
-        }
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent-1: #5c98f8;
+    --accent-2: #2948ae;
+    --card-shadow: rgba(0,0,0,0.06);
+    --border-color: #e2e8f0;
+}
 
-        [data-theme="dark"] {
-            --bg-primary: #000000;
-            --bg-secondary: #3a3a3a;
-            --text-primary: #ffffff;
-            --text-secondary: #dbdbdb;
-            --accent-1: #6477cb;
-            --accent-2: #764ba2;
-            --card-shadow: rgba(0,0,0,0.8);
-            --border-color: #1a1a1a;
-        }
+[data-theme="dark"] {
+    --bg-primary: #020617;
+    --bg-secondary: #1d2537;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --accent-1: #5c98f8;
+    --accent-2: #2948ae;
+    --card-shadow: rgba(0,0,0,0.7);
+    --border-color: #1e293b;
+}
+
 
         * {
             margin: 0;
@@ -159,49 +160,13 @@
 
         .hero-container {
             max-width: 1400px;
-            margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 400px;
             gap: 4rem;
             align-items: center;
         }
 
         .hero-content {
-            text-align: left;
-            margin-left: 80px;
-        }
-
-        .hero-profile-img {
-            position: relative;
-            display: inline-block;
-            width: 400px;
-            height: 400px;
-            right: 20%;
-            margin-left: auto;
-            transform: rotate(20deg);
-        }
-
-        .hero-profile-img::before {
-            content: "";
-            position: absolute;
-            right: 5%;
-            top: -5%;
-            height: 380px;
-            width: 380px;
-            border-radius: 20%;
-            background: linear-gradient(150deg, #efd1ff57 0%, #33138440 100%);
-            box-shadow: #3a3a3a33 0px 0px 20px;
-            z-index: -1;
-        }
-
-        .hero-profile-img img {
-            width: 400px;
-            height: 400px;
-            object-fit: cover;
-            display: block;
-            position: relative;
-            z-index: 1;
-            transform: rotate(-20deg);
+            text-align: center;
         }
 
         .hero h1 {
@@ -231,7 +196,7 @@
 
         .role-badges {
             display: flex;
-            justify-content: left;
+            justify-content: center;
             gap: 1rem;
             flex-wrap: wrap;
             margin-top: 1.5rem;
@@ -255,7 +220,7 @@
 
         .hero-contacts {
             display: flex;
-            justify-content: left;
+            justify-content: center;
             gap: 0.8rem;
             margin-top: 2rem;
             flex-wrap: wrap;
@@ -606,24 +571,40 @@
                 grid-template-columns: 1fr;
                 gap: 2rem;
                 text-align: center;
+                min-height: 1.0rem;
             }
 
             .hero-content {
-                text-align: center;
+                text-align: left;
             }
 
             .hero-profile-img {
                 width: 250px;
                 height: 250px;
-                margin: 0 auto;
+                margin-right: 10px;
+            
+            }
+
+            .hero-profile-img::before {
+                height: 300px;
+                width: 300px;
+                top: -110%;
+                right: -40%;
+            }
+
+            .hero-profile-img img {
+                width: 350px;
+                height: 350px;
+                bottom: 300px;
+                right: -10%;
             }
 
             .role-badges {
-                justify-content: center;
+                justify-content: left;
             }
 
             .hero-contacts {
-                justify-content: center;
+                justify-content: left;
             }
 
             .skills-container {
@@ -638,6 +619,19 @@
             }
 
             .nav-links li:not(:last-child):not(:nth-last-child(2)) {
+                display: none;
+            }
+
+            .hero-container {
+                gap: 0rem;
+            }
+
+            .hero-content {
+                text-align: center;
+                font-size: medium;
+            }
+
+            .hero-profile-img {
                 display: none;
             }
         }
